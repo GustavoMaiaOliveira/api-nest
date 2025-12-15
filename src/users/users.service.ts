@@ -4,9 +4,10 @@ import { Repository } from 'typeorm';
 import { CreateUserDto } from './dto/create-user.dto';
 import { User } from './entities/user.entity';
 import { UpdateUserDto } from './dto/update-user.dto';
+import { UserInterface } from './user.interface';
 
 @Injectable()
-export class UsersService {
+export class UsersService implements UserInterface {
   constructor(
     @InjectRepository(User)
     private userRepository: Repository<User>,
